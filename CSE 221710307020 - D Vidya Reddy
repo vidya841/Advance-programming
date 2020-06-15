@@ -1,0 +1,464 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Day 18 Assignment",
+      "provenance": [],
+      "authorship_tag": "ABX9TyPiBAA5XGF/SFgUo7h9hoNm",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vidya841/Advance-programming/blob/master/CSE%20221710307020%20-%20D%20Vidya%20Reddy\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "2YYaVUXaqDMj",
+        "colab_type": "text"
+      },
+      "source": [
+        "#**Program 1**\n",
+        "Write a C program that takes hours and minutes as input, and calculates the total number of minutes. \n",
+        "#Expected Output :\n",
+        "Input hours: 5\n",
+        "\n",
+        "Input minutes: 37\n",
+        "\n",
+        "Total: 337 minutes."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "7StYqi8qpT_r",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "#include <stdio.h>\n",
+        "#include<string.h>\n",
+        "int main() \n",
+        "{ \n",
+        " int hour,min;\n",
+        " printf(\"Hours: \");\n",
+        " scanf(\"%d\",&hour);\n",
+        " printf(\"Minutes: \");\n",
+        " scanf(\"%d\",&min);\n",
+        " printf(\"%d\",(hour*60)+min);\n",
+        " return 0;\n",
+        "}"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "E5jkZnOXqy9C",
+        "colab_type": "text"
+      },
+      "source": [
+        "#**Program 2** \n",
+        "Write a C program to check whether a character is an alphabet, digit or special character.\n",
+        "#Test Data :\n",
+        "@\n",
+        "#Expected Output :\n",
+        "This is a special character."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "tjJpn51vq9fp",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "#include <stdio.h>\n",
+        "#include<string.h>\n",
+        "int main() \n",
+        "{ \n",
+        " char n;\n",
+        " scanf(\"%c\",&n);\n",
+        " if((n >= 'a' && n <= 'z') || (n >= 'A' && n <= 'Z'))\n",
+        "     printf(\"This is an alphabet\");\n",
+        " else if(n >= '0' && n <= '9')\n",
+        "     printf(\"This is an number\");\n",
+        " else  \n",
+        " printf(\"This is a special charecter\");\n",
+        " return 0;\n",
+        "}"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "qWLYKBnZrA4v",
+        "colab_type": "text"
+      },
+      "source": [
+        "#**Program 3**\n",
+        "Write a program in C to accept a grade and display the equivalent description:\n",
+        "\n",
+        "#Grade\tDescription\n",
+        "\n",
+        "E\tExcellent\n",
+        "\n",
+        "V\tVery Good\n",
+        "\n",
+        "G\tGood\n",
+        "\n",
+        "A\tAverage\n",
+        "\n",
+        "F\tFail"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "gbu5d1pBrAo6",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "#include <stdio.h>\n",
+        "#include<string.h>\n",
+        "int main() \n",
+        "{ \n",
+        " char grade;\n",
+        " printf(\"Grade \");\n",
+        " scanf(\"%c\",&grade);\n",
+        " if(grade == 'E')\n",
+        "    printf(\"Description: Excellent\");\n",
+        " if(grade == 'V')\n",
+        "    printf(\"Description: Very good\");\n",
+        " if(grade == 'G')\n",
+        "    printf(\"Description: Good\");\n",
+        " if(grade == 'A')\n",
+        "    printf(\"Description: Average\");\n",
+        " if(grade == 'F')\n",
+        "    printf(\"Description: Fail\");\n",
+        " return 0;\n",
+        "}"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "FmbFrja6rVKN",
+        "colab_type": "text"
+      },
+      "source": [
+        "#**Program 4**\n",
+        "Write a program in C to calculate and print the Electricity bill of a given customer. The customer id., name and unit consumed by the user should be taken from the keyboard and display the total amount to pay to the customer. The charge are as follow :\n",
+        "\n",
+        "Unit\t                                                                      Charge/unit\n",
+        "upto \n",
+        "199\t                                                                          \n",
+        "\n",
+        "@1.20\n",
+        "\n",
+        "200 and above but less than 400\t                                    @1.50\n",
+        "\n",
+        "400 and above but less than 600\t                                    @1.80\n",
+        "\n",
+        "600 and above\t                                                        @2.00\n",
+        "\n",
+        "If bill exceeds Rs. 400 then a surcharge of 15% will be charged and the minimum bill should be of Rs. 100/-\n",
+        "\n",
+        "#Test Data :\n",
+        "\n",
+        "Customer Id:1001\n",
+        "\n",
+        "Customer Name :James\n",
+        "\n",
+        "Units consumed by the customer :800\n",
+        "\n",
+        "#Expected Output :\n",
+        "\n",
+        "Customer IDNO :1001\n",
+        "\n",
+        "Customer Name :James\n",
+        "\n",
+        "unit Consumed :800\n",
+        "\n",
+        "Amount Charges @Rs. 2.00 per unit : 1600.00\n",
+        "\n",
+        "Surchage Amount : 240.00\n",
+        "\n",
+        "Net Amount Paid By the Customer : 1840.00"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "mBF0U2YDref0",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "#include<stdio.h>\n",
+        "int main()\n",
+        "{\n",
+        "    char name[10];\n",
+        "    int id,units;\n",
+        "    float amount,surcharge,net,per;\n",
+        "    scanf(\"%d\",&id);\n",
+        "    scanf(\"%s\",name);\n",
+        "    scanf(\"%d\",&units);\n",
+        "    if(units<=199)\n",
+        "    {\n",
+        "\n",
+        "        per=1.20;\n",
+        "    }\n",
+        "    else if(units>=200 && units<400)\n",
+        "    {\n",
+        "\n",
+        "        per=1.50;\n",
+        "    }\n",
+        "    else if(units>=400 && units<600)\n",
+        "    {\n",
+        "        per=1.80;\n",
+        "    }\n",
+        "    else\n",
+        "    {\n",
+        "\n",
+        "        per=2.00;\n",
+        "    }\n",
+        "    amount=units*per;\n",
+        "    if(amount>400)\n",
+        "    {\n",
+        "        surcharge=amount *15/100.0;\n",
+        "        net=amount+surcharge;\n",
+        "    }\n",
+        "    else{\n",
+        "        net = amount;\n",
+        "    }\n",
+        "    printf(\"Customer IDNO : %d\",id);\n",
+        "    printf(\"\\n Customer Name : %s\",name);\n",
+        "    printf(\"\\n units Consumed : %d\",units);\n",
+        "    printf(\"\\n Amount Charges @Rs. %4.2f per unit : %8.2f\",per,amount);\n",
+        "    printf(\"\\n Surcharge Amount : %8.2f\",surcharge);\n",
+        "    printf(\"\\n Net Amount paid by the customer : %8.2f\",net);\n",
+        "    return 0;\n",
+        "\n",
+        "}"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "qTTQTeeorvHD",
+        "colab_type": "text"
+      },
+      "source": [
+        "#**Program 5**\n",
+        "Write a program in C to check whether an array is subset of another array."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "_qsaxYJSruy3",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "#include<stdio.h>\n",
+        "int isSubsetArray(int *array1, int size1, int *array2, int size2) {\n",
+        "    int i, j;\n",
+        "    for (i = 0; i < size2; i++) {\n",
+        "        for (j = 0; j < size1; j++) {\n",
+        "           if(array2[i] == array1[j])\n",
+        "              /* Element found */\n",
+        "              break;\n",
+        "        }\n",
+        "          \n",
+        "        if(j == size1)\n",
+        "           return 0;\n",
+        "    }\n",
+        "    return 1;\n",
+        "}\n",
+        "   \n",
+        "int main() {\n",
+        "    int array1[9] = {3, 5, 7, 12, 1, 9, 10, 0, 2};\n",
+        "    int array2[4] = {1, 3, 5, 9};\n",
+        "  \n",
+        "    if(isSubsetArray(array1, 9, array2, 4))\n",
+        "      printf(\"array2 is subset of array1\");\n",
+        "    else\n",
+        "      printf(\"array2 is not a subset of array1\");     \n",
+        "  \n",
+        "    return 0;\n",
+        "}"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "RWOPqfMBr1MT",
+        "colab_type": "text"
+      },
+      "source": [
+        "#**Program 6**\n",
+        "Write a program in C to make such a pattern like a pyramid with a number which will repeat the number in the same row. \n",
+        "\n",
+        "   1\n",
+        "\n",
+        "  2 2\n",
+        "\n",
+        " 3 3 3\n",
+        "\n",
+        "4 4 4 4"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "d45k04Acr85T",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "#include <stdio.h>\n",
+        "int main()\n",
+        "{\n",
+        "   int i,j,space,r,k;\n",
+        "   scanf(\"%d\",&r);\n",
+        "   space=r+4-1;\n",
+        "   for(i=1;i<=r;i++)\n",
+        "   {\n",
+        "         for(k=space;k>=1;k--)\n",
+        "            {\n",
+        "              printf(\" \");\n",
+        "            }\n",
+        "                      \n",
+        "\t   for(j=1;j<=i;j++)\n",
+        "\t   printf(\"%d \",i);\n",
+        "\tprintf(\"\\n\");\n",
+        "    space--;\n",
+        "   }\n",
+        "}"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "f-g5MM1hsRkP",
+        "colab_type": "text"
+      },
+      "source": [
+        "#**Program 7**\n",
+        "Write a program in C which is a Menu-Driven Program to perform a simple calculation."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "hbwNpnQesRYd",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "#include <stdio.h>\n",
+        "int main()\n",
+        "{\n",
+        " int n,num1,num2;\n",
+        " scanf(\"%d%d\",&num1,&num2);\n",
+        " printf(\"1. Addition \\n\");\n",
+        " printf(\"2. Substration \\n\");\n",
+        " printf(\"3. Multiplication \\n\");\n",
+        " printf(\"4. Division \\n\");\n",
+        " scanf(\"%d\",&n);\n",
+        " switch(n)\n",
+        " {\n",
+        "  case 1 : printf(\"%d\",num1+num2);break;\n",
+        "  case 2 : printf(\"%d\",num1-num2);break;\n",
+        "  case 3 : printf(\"%d\",num1*num2);break;\n",
+        "  case 4 : printf(\"%d\",num1/num2);break;\n",
+        " }\n",
+        "}"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "pAChtwyTsY6t",
+        "colab_type": "text"
+      },
+      "source": [
+        "8. Write a program in C to display the pattern like a diamond. The pattern is as follows :\n",
+        "\n",
+        "    *   \n",
+        "   ***\n",
+        "  ***** \n",
+        " ******* \n",
+        "********* \n",
+        " *******\n",
+        "  *****\n",
+        "   ***\n",
+        "    * "
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "QW4JuhAMsclZ",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "#include <stdio.h>\n",
+        "int main()\n",
+        "{\n",
+        "   int i,j,r;\n",
+        "   scanf(\"%d\",&r);\n",
+        "   for(i=0;i<=r;i++)\n",
+        "   {\n",
+        "     for(j=1;j<=r-i;j++)\n",
+        "     printf(\" \");\n",
+        "     for(j=1;j<=2*i-1;j++)\n",
+        "       printf(\"*\");\n",
+        "     printf(\"\\n\");\n",
+        "   }\n",
+        "   for(i=r-1;i>=1;i--)\n",
+        "   {\n",
+        "     for(j=1;j<=r-i;j++)\n",
+        "     printf(\" \");\n",
+        "     for(j=1;j<=2*i-1;j++)\n",
+        "       printf(\"*\");\n",
+        "     printf(\"\\n\");\n",
+        "   }\n",
+        "}"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    }
+  ]
+}
